@@ -1,0 +1,1 @@
+- As a user, I can select a cuisine and view all the recipes.
