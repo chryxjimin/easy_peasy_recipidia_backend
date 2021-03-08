@@ -10,3 +10,5 @@
 italian = Cuisine.create(name: "Italian")
 mexican = Cuisine.create(name: "Mexican")
 thai = Cuisine.create(name: "Thai")
+
+Recipe.creat(title: "PASTA WITH PEAS", description: "This Italian pasta with peas is a simple, creamy, and delicious one-pot dinner recipe that uses minimal ingredients.", image_url: "https://theclevermeal.com/wp-content/uploads/2020/03/pasta-with-peas-4-copy-1-798x1024.jpg", category_id: italian.id)
