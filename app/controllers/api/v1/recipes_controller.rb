@@ -2,7 +2,10 @@ class Api::V1::RecipesController < ApplicationController
 
     def index
         recipes = Recipe.all
-        render json: recipes
+        # options = {
+        #     include: [:cuisine]
+        # }
+        render json: RecipeSerializer.new(recipes)
     end
 
     def create
