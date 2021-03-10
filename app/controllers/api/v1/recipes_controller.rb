@@ -11,9 +11,9 @@ class Api::V1::RecipesController < ApplicationController
     def create
         recipe = Recipe.new(recipe_params)
         if recipe.save
-            render json: recipe, status: :accepted
+            render json: RecipeSerializer.new(recipe), status: :accepted
         else 
-            redner json: {message: recipe.errors.full_messages}, status: :unprocessible_entity
+            render json: {message: recipe.errors.full_messages}, status: :unprocessible_entity
         end
     end
 
