@@ -17,6 +17,14 @@ class Api::V1::RecipesController < ApplicationController
         end
     end
 
+    def destroy 
+        recipe = Recipe.find(params[:id])
+
+        if recipe.destroy
+            render json: {id: item.id}
+        end
+    end
+
 
     private
 
