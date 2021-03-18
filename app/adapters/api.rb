@@ -10,6 +10,7 @@ class Api
 
 
     def get_recipes
+        #needs cuisine to be passed as an argument 
         url = "https://api.spoonacular.com/recipes/random?apiKey=#{API_KEY}"
         uri = URI.parse(url)
         response_body = uri.read
@@ -18,10 +19,20 @@ class Api
             title = recipe["title"]
             description = recipe["summary"]
             image_url = recipe["image"]
+            if recipe["cuisines"] = []
+                binding.pry
+                recipe["cuisines"] = Cuisine.find_create_by(name: "General")
+            else
+                recipe["cuisines"] = recipe["cuisines"]
+            end
+            
             # ingredients = recipe["extendedIngredients"]["name"]
             # instructions = recipe["instructions"]
-            # binding.pry
-            Recipe.create(title: recipe["title"], description: recipe["summary"], image_url: recipe["image"], cuisine: )
+            binding.pry
+            Recipe.create(title: recipe["title"], description: recipe["summary"], image_url: recipe["image"])
+            #needs cuisine to be passed as an argument 
+            #need to make sure the first letter is in caps"
+
         end
     end
 end
