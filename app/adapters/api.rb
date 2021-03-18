@@ -10,7 +10,7 @@ class Api
 
 
     def get_recipes
-        url = "https://api.spoonacular.com/recipes/random?apiKey=8d26e1f529aa4d219afeb05daf80c43a"
+        url = "https://api.spoonacular.com/recipes/random?apiKey=#{API_KEY}"
         uri = URI.parse(url)
         response_body = uri.read
         data = JSON.parse(response_body)
@@ -18,10 +18,10 @@ class Api
             title = recipe["title"]
             description = recipe["summary"]
             image_url = recipe["image"]
-            ingredients = recipe["extendedIngredients"]["name"]
-            instructions = recipe["instructions"]
+            # ingredients = recipe["extendedIngredients"]["name"]
+            # instructions = recipe["instructions"]
             # binding.pry
-            Recipe.new(title: recipe["title"], description: recipe["summary"], image_url: recipe["image"])
+            Recipe.create(title: recipe["title"], description: recipe["summary"], image_url: recipe["image"], cuisine: )
         end
     end
 end

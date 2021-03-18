@@ -8,6 +8,8 @@
 Cuisine.destroy_all
 Recipe.destroy_all
 
+Api::Adapter.new.get_recipes
+
 italian = Cuisine.create(name: "Italian")
 mexican = Cuisine.create(name: "Mexican")
 thai = Cuisine.create(name: "Thai")
