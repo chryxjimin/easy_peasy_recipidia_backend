@@ -19,6 +19,9 @@ class Api
             title = recipe["title"]
             description = recipe["summary"]
             image_url = recipe["image"]
+            ingredients = recipe["extendedIngredients"]["name"]
+            instructions = recipe["instructions"]
+            # binding.pry
             Recipe.new(title: recipe["title"], description: recipe["summary"], image_url: recipe["image"])
         end
     end
@@ -26,3 +29,14 @@ end
 
 
 Api.new.get_recipes
+
+# data["recipes"][0]["title"]
+
+# data["recipes"][0]["extendedIngredients"][0]["name"]
+# data["recipes"][0]["extendedIngredients"][0]["original"]
+
+# data["recipes"][0]["extendedIngredients"].map do |ingredient|
+#     ingredientsArray = []
+#     ingredientsArray <<  ingredient["name"] + " - " + ingredient["original"]
+#     # ingredientsArray.flatten
+# end
