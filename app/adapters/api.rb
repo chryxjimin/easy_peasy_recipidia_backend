@@ -20,7 +20,7 @@ class Api
             description = recipe["summary"]
             image_url = recipe["image"]
             if recipe["cuisines"] = []
-                binding.pry
+                # binding.pry
                 recipe["cuisines"] = Cuisine.find_create_by(name: "General")
             else
                 recipe["cuisines"] = recipe["cuisines"]
@@ -28,7 +28,6 @@ class Api
             
             # ingredients = recipe["extendedIngredients"]["name"]
             # instructions = recipe["instructions"]
-            binding.pry
             Recipe.create(title: recipe["title"], description: recipe["summary"], image_url: recipe["image"])
             #needs cuisine to be passed as an argument 
             #need to make sure the first letter is in caps"
@@ -38,7 +37,7 @@ class Api
 end
 
 
-Api.new.get_recipes
+# Api.new.get_recipes
 
 # data["recipes"][0]["title"]
 
