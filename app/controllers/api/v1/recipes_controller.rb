@@ -9,6 +9,7 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def create
+        byebug
         recipe = Recipe.new(recipe_params)
         if recipe.save
             render json: RecipeSerializer.new(recipe), status: :accepted
@@ -18,11 +19,16 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def show
+        # byebug
         recipe = Recipe.find(params[:id])
         render json: RecipeSerializer.new(recipe)
     end
 
     def destroy 
+        # byebug
+        # recipe_id = params[:id].to_i
+        # recipe = Recipe.find(recipe_id)
+
         recipe = Recipe.find(params[:id])
 
         if recipe.destroy

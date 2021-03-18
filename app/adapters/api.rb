@@ -14,7 +14,6 @@ class Api
         uri = URI.parse(url)
         response_body = uri.read
         data = JSON.parse(response_body)
-        binding.pry
         data["recipes"].each do |recipe|
             title = recipe["title"]
             description = recipe["summary"]
