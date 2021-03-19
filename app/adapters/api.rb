@@ -11,7 +11,7 @@ class Api
 
     def get_recipes
         #needs cuisine to be passed as an argument 
-        url = "https://api.spoonacular.com/recipes/random?apiKey=ed151cd4317440b8a97f0c2b30e5de47"
+        url = "https://api.spoonacular.com/recipes/random?apiKey=#{API_KEY}"
         uri = URI.parse(url)
         response_body = uri.read
         data = JSON.parse(response_body)
