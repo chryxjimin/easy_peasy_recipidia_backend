@@ -4,5 +4,5 @@ class Api::V1::CuisinesController < ApplicationController
         cuisines = Cuisine.all
         render json: CuisineSerializer.new(cuisines)
     end
-    
+     
 end

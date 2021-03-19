@@ -13,7 +13,7 @@ mexican = Cuisine.create(name: "Mexican")
 thai = Cuisine.create(name: "Thai")
 # general = Cuisine.create(name: "General")
 
-# Api::Adapter.new.get_recipes
+Api::Adapter.new.get_recipes
 
 
 

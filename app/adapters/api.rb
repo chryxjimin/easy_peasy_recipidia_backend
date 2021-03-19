@@ -1,4 +1,4 @@
-# require_relative '../../.env'
+# require_relative '../../models/cuisine.rb'
 require 'open-uri'
 require 'net/http'
 require 'json'
@@ -11,7 +11,7 @@ class Api
 
     def get_recipes
         #needs cuisine to be passed as an argument 
-        url = "https://api.spoonacular.com/recipes/random?apiKey=#{API_KEY}"
+        url = "https://api.spoonacular.com/recipes/random?apiKey=ed151cd4317440b8a97f0c2b30e5de47"
         uri = URI.parse(url)
         response_body = uri.read
         data = JSON.parse(response_body)
@@ -21,7 +21,7 @@ class Api
             image_url = recipe["image"]
             if recipe["cuisines"] = []
                 # binding.pry
-                recipe["cuisines"] = Cuisine.find_create_by(name: "General")
+                recipe["cuisines"] = Cuisine.find_or_create_by(name: "General")
             else
                 recipe["cuisines"] = recipe["cuisines"]
             end
@@ -37,7 +37,7 @@ class Api
 end
 
 
-# Api.new.get_recipes
+Api.new.get_recipes
 
 # data["recipes"][0]["title"]
 
