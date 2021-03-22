@@ -1,6 +1,6 @@
 # EASY RECIPEDIA
 
-Travel Lister is a Ruby library for dealing with dealing with keeping track of what you need to pack for your next trip.
+Easy Recipedia is a Single Page Application(SPA) that allows users to create and view recipes.
 
 ## Installation
 
@@ -17,6 +17,10 @@ And then execute:
 Or install it yourself as:
 
     $ gem install easy_recipedia
+
+
+## Requirements
+https://github.com/chryxjimin/easy_recipedia_frontend
 
 
 ## Contributing
