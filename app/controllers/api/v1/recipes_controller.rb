@@ -9,11 +9,12 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def create
+        # byebug
         recipe = Recipe.new(recipe_params)
         if recipe.save
             render json: RecipeSerializer.new(recipe), status: :accepted
         else 
-            render json: {message: recipe.errors.full_messages}, status: :unprocessible_entity
+            render json: {message: recipe.errors.full_messages}, status: 422
         end
     end
 
