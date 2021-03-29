@@ -11,9 +11,9 @@ Recipe.destroy_all
 italian = Cuisine.create(name: "Italian")
 mexican = Cuisine.create(name: "Mexican")
 thai = Cuisine.create(name: "Thai")
-# general = Cuisine.create(name: "General")
+general = Cuisine.create(name: "General")
 
-Api::Adapter.new.get_recipes
+Api.new.get_recipes
 
 
 
@@ -23,6 +23,8 @@ Recipe.create(title: "PASTA WITH PEAS", description: "This Italian pasta with pe
 Recipe.create(title: "SPHAGETTI", description: "Juicy seasoned beef and pork meatballs in an easy homemade tomato sauce.", image_url: "https://www.spendwithpennies.com/wp-content/uploads/2019/03/Spaghetti-and-Meatballs-SpendWithPennies-4.jpg", cuisine_id: italian.id)
 Recipe.create(title: "THAI MILK TEA", description: "Similar to hot Thai tea, real Thai iced tea is a mix of black tea, spices, sugar, sweetened condensed milk, and evaporated milk.", image_url: "https://nitrocdn.com/qQMlXstDwcbLbpIQqybyApGNsyawllPe/assets/static/source/rev-c2ee214/recipe/images/thai-iced-tea-recipe-2.jpg", cuisine_id: thai.id)
 Recipe.create(title: "CRUNCHY THAI SALAD WITH PEANUT DRESSING", description: "Irresistibly crunchy Thai salad with creamy peanut dressing will be your new vegetable obsession! Each bite packs a powerhouse of fresh superfoods.", image_url: "https://www.jessicagavin.com/wp-content/uploads/2016/07/crunchy-thai-salad-with-peanut-sauce-600x900.jpg", cuisine_id: thai.id)
+Recipe.create(title:"BAKED RAVIOLI", description: "This Baked Ravioli recipe takes frozen ravioli and combines it with a homemade pasta sauce and lots of cheese. It’s super easy and super filling!", image_url:"https://www.tasteandtellblog.com/wp-content/uploads/2019/11/Baked-Ravioli-tasteandtellblog.com-1-768x512.jpg", cuisine_id: italian.id)
+Recipe.create(title:"Ceviche", description: "Ceviche, also cebiche, seviche, or sebiche is a South American seafood dish that originated in Peru, typically made from fresh raw fish cured in fresh citrus juices, most commonly lemon or lime, and spiced with ají, chili peppers or other seasonings, including chopped onions, salt, and coriander.", image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Cebiche_de_corvina.JPG/1200px-Cebiche_de_corvina.JPG", cuisine_id: mexican.id)
 # put "seeding database"
 # Api::Adapter.new.get_recipes
 # puts "done"
