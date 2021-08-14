@@ -12,7 +12,7 @@ class Api
     def get_recipes
         #needs cuisine to be passed as an argument 
         # binding.pry
-        url = "https://api.spoonacular.com/recipes/random?apiKey=db76ccb5d097490995fb985a503d0e0a&number=30"
+        url = "https://api.spoonacular.com/recipes/random?apiKey=#{API_KEY}&number=30"
         uri = URI.parse(url)
         response_body = uri.read
         data = JSON.parse(response_body)
