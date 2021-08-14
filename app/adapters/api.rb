@@ -12,7 +12,7 @@ class Api
     def get_recipes
         #needs cuisine to be passed as an argument 
         # binding.pry
-        url = "https://api.spoonacular.com/recipes/random?apiKey=0c9b318480b143c8a852a278b23937d5&number=30"
+        url = "https://api.spoonacular.com/recipes/random?apiKey=db76ccb5d097490995fb985a503d0e0a&number=30"
         uri = URI.parse(url)
         response_body = uri.read
         data = JSON.parse(response_body)
@@ -29,13 +29,7 @@ class Api
             else
                 cuisine = Cuisine.create(name: recipe["cuisines"][0])
             end
-            
-            # ingredients = recipe["extendedIngredients"]["name"]
-            # instructions = recipe["instructions"]
-            #  binding.pry
            Recipe.create(title: recipe["title"], description: recipe["summary"], image_url: recipe["image"], cuisine_id: cuisine.id)
-            #needs cuisine to be passed as an argument 
-            #need to make sure the first letter is in caps"
         end
     end
 
@@ -43,14 +37,3 @@ end
 
 
 Api.new.get_recipes
-
-# data["recipes"][0]["title"]
-
-# data["recipes"][0]["extendedIngredients"][0]["name"]
-# data["recipes"][0]["extendedIngredients"][0]["original"]
-
-# data["recipes"][0]["extendedIngredients"].map do |ingredient|
-#     ingredientsArray = []
-#     ingredientsArray <<  ingredient["name"] + " - " + ingredient["original"]
-#     # ingredientsArray.flatten
-# end
