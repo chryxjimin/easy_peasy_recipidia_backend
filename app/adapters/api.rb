@@ -10,9 +10,7 @@ class Api
 
 
     def get_recipes
-        #needs cuisine to be passed as an argument 
-        # binding.pry
-        url = "https://api.spoonacular.com/recipes/random?apiKey=#{API_KEY}&number=30"
+        url = "https://api.spoonacular.com/recipes/random?apiKey=#{API_KEY}"
         uri = URI.parse(url)
         response_body = uri.read
         data = JSON.parse(response_body)
@@ -21,8 +19,6 @@ class Api
             description = recipe["summary"]
             image_url = recipe["image"]
             if recipe["cuisines"].any? && Cuisine.find_by(name: recipe["cuisines"][0])
-               
-                #we need to grab the cuisine object and have it saved as variable
                 cuisine = Cuisine.find_by(name: recipe["cuisines"][0])
             elsif recipe["cuisines"].empty?
                 cuisine = Cuisine.find_by(name: "General")
